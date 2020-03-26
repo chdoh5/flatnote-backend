@@ -11,11 +11,12 @@ Tag.delete_all
 Notetag.delete_all
 
 user = User.create(username: "christine")
-# user2= User.create(username: "remus")
+remus = User.create(username: "remus")
 
 test_note = Note.create(title: "Test-Title", content:"This is a test", user_id: user.id)
 test_note2 = Note.create(title: "2nd Test-Title", content:"This is a second test", user_id: user.id)
 test_note3 = Note.create(title: "3rd Test-Title", content:"This is a third test", user_id: user.id)
+test_note4 = Note.create(title: "Remus Note", content:"This is Remus' note", user_id: remus.id)
 
 test_tag = Tag.create(name: "Test-Tag")
 animals_tag = Tag.create(name: "animals")
