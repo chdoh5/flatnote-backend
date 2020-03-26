@@ -11,8 +11,12 @@ class NotesController < ApplicationController
         options = {
             include: [:user, :tags, :notetags]
         }
-        # render json: CartSerializer.new(cart, options)
         render json: note
+    end
+
+    def create 
+        note = Note.create(title: params[:title], content: params[:content], user_id: params[:user_id])
+        render json: note, include: [:user, :tags]
     end
 
 
